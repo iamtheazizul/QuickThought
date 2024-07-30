@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickthought/widgets/fab_button.dart';
 
 import '../../extension.dart';
 import '../../widgets/month_view_widget.dart';
@@ -17,11 +18,7 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          elevation: 8,
-          onPressed: () => context.pushRoute(CreateEventPage()),
-        ),
+        floatingActionButton: CustomActionButton(),
         body: MonthViewWidget(),
   
     );

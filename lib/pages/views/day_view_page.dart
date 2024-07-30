@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quickthought/app_color.dart';
+import 'package:quickthought/widgets/fab_button.dart';
+import 'package:quickthought/widgets/genericDrawer.dart';
 
 import '../../extension.dart';
 import '../../widgets/day_view_widget.dart';
@@ -14,13 +17,12 @@ class DayViewPageDemo extends StatefulWidget {
 class _DayViewPageDemoState extends State<DayViewPageDemo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // drawer: GenericDrawer(),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          elevation: 8,
-          onPressed: () => context.pushRoute(CreateEventPage()),
-        ),
+    return Scaffold(        
+        // FloatingActionButton(
+        //   elevation: 8,
+        //   onPressed: () => context.pushRoute(CreateEventPage()),
+        //   child: Icon(Icons.add),
+        // ),
         body: DayViewWidget(),
       );
   }

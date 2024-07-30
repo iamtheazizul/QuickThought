@@ -6,6 +6,10 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quickthought/app_color.dart';
+import 'package:quickthought/pages/views/day_view_page.dart';
+import 'package:quickthought/widgets/bottom_app_bar.dart';
+import 'package:quickthought/widgets/fab_button.dart';
 import 'package:quickthought/widgets/genericDrawer.dart';
 
 import '../../calendar_view.dart';
@@ -263,7 +267,7 @@ class DayView<T extends Object?> extends StatefulWidget {
     this.dayTitleBuilder,
     this.eventArranger,
     this.verticalLineOffset = 10,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = AppColors.white,
     this.scrollOffset,
     this.onEventTap,
     this.onEventLongTap,
@@ -445,7 +449,10 @@ class DayViewState<T extends Object?> extends State<DayView<T>> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const GenericDrawer(),
+      drawer: GenericDrawer(),
+      floatingActionButton: CustomActionButton(),
+      bottomNavigationBar: CustomBottomAppBar(),
+      
       appBar: AppBar(
         title: Text('$month'),
       ),

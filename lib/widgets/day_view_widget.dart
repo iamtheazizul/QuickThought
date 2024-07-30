@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
+import 'package:quickthought/widgets/genericDrawer.dart';
 
 import '../pages/event_details_page.dart';
 
