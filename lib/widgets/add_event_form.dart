@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
+import 'package:quickthought/widgets/color_picker_widget.dart';
+import 'package:quickthought/widgets/color_properties.dart';
 
 import '../app_color.dart';
 import '../constants.dart';
@@ -29,7 +31,10 @@ class _AddOrEditEventFormState extends State<AddOrEditEventForm> {
   DateTime? _startTime;
   DateTime? _endTime;
 
-  Color _color = Colors.blue;
+  Color _color = AppColors.primaryEventBackgroundColor;
+  Color _eventBorderColor = AppColors.primaryEventBorder;
+  Color _eventTitleColor = AppColors.primaryEventTitle;
+
 
   final _form = GlobalKey<FormState>();
 
@@ -259,13 +264,14 @@ class _AddOrEditEventFormState extends State<AddOrEditEventForm> {
                   fontSize: 17,
                 ),
               ),
-              GestureDetector(
-                onTap: _displayColorPicker,
-                child: CircleAvatar(
-                  radius: 15,
-                  backgroundColor: _color,
-                ),
-              ),
+              ColorPickerButton(onColorSelected: _updateColor),
+              // GestureDetector(
+              //   onTap: _displayColorPicker,
+              //   child: CircleAvatar(
+              //     radius: 15,
+              //     backgroundColor: _color,
+              //   ),
+              // ),
             ],
           ),
           SizedBox(
@@ -290,6 +296,8 @@ class _AddOrEditEventFormState extends State<AddOrEditEventForm> {
       endTime: _endTime,
       startTime: _startTime,
       endDate: _endDate,
+      eventBorderColor: _eventBorderColor,
+      eventTitleColor: _eventTitleColor,
       color: _color,
       title: _titleController.text.trim(),
       description: _descriptionController.text.trim(),
@@ -325,6 +333,15 @@ class _AddOrEditEventFormState extends State<AddOrEditEventForm> {
     }
   }
 
+  void _updateColor(ColorProperties color) {
+    setState(() {
+      _color = color.selectedColor;
+      _eventBorderColor = color.borderColor;
+      _eventTitleColor = color.textColor;
+    });
+  }
+
+
   void _displayColorPicker() {
     var color = _color;
     showDialog(
@@ -338,7 +355,7 @@ class _AddOrEditEventFormState extends State<AddOrEditEventForm> {
         ),
         contentPadding: EdgeInsets.all(20.0),
         children: [
-          Text(
+          const Text(
             "Select event color",
             style: TextStyle(
               color: AppColors.black,

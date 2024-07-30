@@ -1,7 +1,6 @@
 // Copyright (c) 2021 Simform Solutions. All rights reserved.
 // Use of this source code is governed by a MIT-style license
 // that can be found in the LICENSE file.
-
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
@@ -26,7 +25,12 @@ import '../modals.dart';
 import '../painters.dart';
 import '../style/header_style.dart';
 import '../typedefs.dart';
+import 'package:intl/intl.dart';
+
 import '_internal_day_view_page.dart';
+
+DateTime get _now => DateTime.now();
+
 
 class DayView<T extends Object?> extends StatefulWidget {
   /// A function that returns a [Widget] that determines appearance of each
@@ -435,12 +439,15 @@ class DayViewState<T extends Object?> extends State<DayView<T>> {
     super.dispose();
   }
 
+  String month = DateFormat.MMMM().format(_now);
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const GenericDrawer(),
       appBar: AppBar(
-        title: Text('Daily View'),
+        title: Text('$month'),
       ),
       body: SafeAreaWrapper(
         option: widget.safeAreaOption,

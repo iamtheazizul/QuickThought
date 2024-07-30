@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quickthought/calendar_view/src/day_view/day_view.dart';
-import 'package:quickthought/calendar_view/src/month_view/month_view.dart';
-import 'package:quickthought/calendar_view/src/week_view/week_view.dart';
-import 'package:quickthought/pages/views/day_view_page.dart';
 import 'package:quickthought/quickthought.dart';
 
 class GenericDrawer extends StatelessWidget {

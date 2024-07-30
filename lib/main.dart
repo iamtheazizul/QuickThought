@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return CalendarControllerProvider(
       controller: EventController()..addAll(_events),
       child: MaterialApp(
+        // theme: primaryTheme,
         debugShowCheckedModeBanner: false,
         home: CalendarHomePage(),
       ),
@@ -38,8 +39,8 @@ List<CalendarEventData> _events = [
   ),
   CalendarEventData(
     date: _now,
-    startTime: DateTime(_now.year, _now.month, _now.day, 14),
-    endTime: DateTime(_now.year, _now.month, _now.day, 17),
+    startTime: DateTime(_now.year, _now.month, _now.day, 10),
+    endTime: DateTime(_now.year, _now.month, _now.day, 13),
     title: "Football Tournament",
     description: "Go to football tournament.",
   ),

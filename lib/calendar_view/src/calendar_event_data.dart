@@ -3,6 +3,7 @@
 // that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quickthought/app_color.dart';
 
 import '../calendar_view.dart';
 
@@ -44,15 +45,23 @@ class CalendarEventData<T extends Object?> {
   /// Define style of description.
   final TextStyle? descriptionStyle;
 
+  // Define event border's color.
+  final Color eventBorderColor;
+
+  // Define event title's color.
+  final Color eventTitleColor;
+
   /// {@macro calendar_event_data_doc}
   CalendarEventData({
     required this.title,
     required DateTime date,
     this.description,
     this.event,
-    this.color = Colors.blue,
+    this.color = AppColors.primaryEventBackgroundColor,
     this.startTime,
     this.endTime,
+    this.eventBorderColor = AppColors.primaryEventBorder,
+    this.eventTitleColor = AppColors.primaryEventTitle,
     this.titleStyle,
     this.descriptionStyle,
     DateTime? endDate,

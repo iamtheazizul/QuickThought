@@ -29,7 +29,7 @@ class CalendarHomePage extends StatelessWidget {
       //     child: Text('QuickThought')
       //   ),
       // ),
-      body: const MonthViewPageDemo(),
+      body: const DayViewPageDemo(),
     );
   }
 }

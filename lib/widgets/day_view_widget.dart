@@ -18,7 +18,7 @@ class DayViewWidget extends StatelessWidget {
     return DayView(
       key: state,
       width: width,
-      startDuration: Duration(hours: 8),
+      startDuration: const Duration(hours: 8),
       showHalfHours: false,
       heightPerMinute: 1,
       timeLineBuilder: _timeLineBuilder,

@@ -24,6 +24,9 @@ class RoundedEventTile extends StatelessWidget {
   /// Default color is [Colors.blue]
   final Color backgroundColor;
 
+  /// Color of event title.
+  // final Color eventTitleColor;
+
   /// If same tile can have multiple events.
   /// In most cases this value will be 1 less than total events.
   final int totalEvents;
@@ -43,6 +46,12 @@ class RoundedEventTile extends StatelessWidget {
   /// Style for description
   final TextStyle? descriptionStyle;
 
+  // Border color of the tile
+  final Color eventBorderColor;
+
+  // Title color of the tile
+  final Color eventTitleColor;
+
   /// This is default tile to display in day view.
   const RoundedEventTile({
     Key? key,
@@ -50,53 +59,64 @@ class RoundedEventTile extends StatelessWidget {
     this.padding = EdgeInsets.zero,
     this.margin = EdgeInsets.zero,
     this.description,
-    this.borderRadius = BorderRadius.zero,
+    this.borderRadius = const BorderRadius.only(topLeft: Radius.circular(50)),
     this.totalEvents = 1,
-    this.backgroundColor = Colors.blue,
+    this.backgroundColor = Colors.white,
+    this.eventTitleColor = Colors.white,
+    this.eventBorderColor = Colors.white,
     this.titleStyle,
     this.descriptionStyle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var expanded = Expanded(
+              child: Text(
+                title,
+                style: titleStyle ??
+                    TextStyle(
+                      fontFamily: 'SFProText',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      color: eventTitleColor
+                    ),
+                softWrap: true,
+                overflow: TextOverflow.fade,
+              ),
+            );
     return Container(
       padding: padding,
       margin: margin,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: borderRadius,
+        border: Border(
+          left: BorderSide(
+            color: eventBorderColor,
+            width: 4.0
+          ),
+        )
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           if (title.isNotEmpty)
-            Expanded(
-              child: Text(
-                title,
-                style: titleStyle ??
-                    TextStyle(
-                      fontSize: 20,
-                      color: backgroundColor.accent,
-                    ),
-                softWrap: true,
-                overflow: TextOverflow.fade,
-              ),
-            ),
-          if (description?.isNotEmpty ?? false)
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 15.0),
-                child: Text(
-                  description!,
-                  style: descriptionStyle ??
-                      TextStyle(
-                        fontSize: 17,
-                        color: backgroundColor.accent.withAlpha(200),
-                      ),
-                ),
-              ),
-            ),
+            expanded,
+          // if (description?.isNotEmpty ?? false)
+          //   Expanded(
+          //     child: Padding(
+          //       padding: const EdgeInsets.only(bottom: 15.0),
+          //       child: Text(
+          //         description!,
+          //         style: descriptionStyle ??
+          //             TextStyle(
+          //               fontSize: 17,
+          //               color: backgroundColor.accent.withAlpha(200),
+          //             ),
+          //       ),
+          //     ),
+          //   ),
           if (totalEvents > 1)
             Expanded(
               child: Text(
@@ -247,6 +267,11 @@ class FullDayEventView<T> extends StatelessWidget {
                 margin: const EdgeInsets.all(5.0),
                 padding: const EdgeInsets.all(1.0),
                 height: 24,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: events[index].color,
+                ),
+                alignment: Alignment.centerLeft,
                 child: Text(
                   events[index].title,
                   style: titleStyle ??
@@ -256,11 +281,6 @@ class FullDayEventView<T> extends StatelessWidget {
                       ),
                   maxLines: 1,
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: events[index].color,
-                ),
-                alignment: Alignment.centerLeft,
               ),
         ),
       ),
