@@ -3,32 +3,16 @@
 // that can be found in the LICENSE file.
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:quickthought/app_color.dart';
-import 'package:quickthought/pages/views/day_view_page.dart';
 import 'package:quickthought/widgets/bottom_app_bar.dart';
 import 'package:quickthought/widgets/fab_button.dart';
 import 'package:quickthought/widgets/genericDrawer.dart';
 
 import '../../calendar_view.dart';
-import '../calendar_constants.dart';
-import '../calendar_controller_provider.dart';
-import '../calendar_event_data.dart';
 import '../components/common_components.dart';
-import '../components/day_view_components.dart';
 import '../components/event_scroll_notifier.dart';
-import '../components/safe_area_wrapper.dart';
 import '../constants.dart';
-import '../enumerations.dart';
-import '../event_arrangers/event_arrangers.dart';
-import '../event_controller.dart';
-import '../extensions.dart';
-import '../modals.dart';
 import '../painters.dart';
-import '../style/header_style.dart';
-import '../typedefs.dart';
 import 'package:intl/intl.dart';
 
 import '_internal_day_view_page.dart';
@@ -267,7 +251,7 @@ class DayView<T extends Object?> extends StatefulWidget {
     this.dayTitleBuilder,
     this.eventArranger,
     this.verticalLineOffset = 10,
-    this.backgroundColor = AppColors.white,
+    this.backgroundColor = Colors.white,
     this.scrollOffset,
     this.onEventTap,
     this.onEventLongTap,
@@ -281,7 +265,7 @@ class DayView<T extends Object?> extends StatefulWidget {
     this.pageViewPhysics,
     this.dayDetectorBuilder,
     this.showHalfHours = false,
-    this.showQuarterHours = false,
+    this.showQuarterHours = true,
     this.halfHourIndicatorSettings,
     this.startHour = 0,
     this.quarterHourIndicatorSettings,

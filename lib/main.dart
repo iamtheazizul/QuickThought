@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickthought/app_color.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
 import 'package:quickthought/home.dart';
 
@@ -83,4 +84,15 @@ List<CalendarEventData> _events = [
     title: "Chemistry Viva",
     description: "Today is Joe's birthday.",
   ),
+  CalendarEventData(
+    date: _now,
+    title: "Free Time",
+    description: "Today is project meeting.",
+    startTime: DateTime(_now.year, _now.month, _now.day, 9),
+    endTime: DateTime(_now.year, _now.month, _now.day, 10),
+    color: AppColors.availableEventBackgroundColor,
+    eventBorderColor: AppColors.availableEventBorder,
+    eventTitleColor: const Color.fromRGBO(35, 36, 3, 1)
+  ),
+
 ];

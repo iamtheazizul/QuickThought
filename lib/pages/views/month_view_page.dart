@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/widgets/fab_button.dart';
 
-import '../../extension.dart';
 import '../../widgets/month_view_widget.dart';
-import '../create_event_page.dart';
 
 class MonthViewPageDemo extends StatefulWidget {
   const MonthViewPageDemo({

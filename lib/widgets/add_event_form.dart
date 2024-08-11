@@ -342,57 +342,57 @@ class _AddOrEditEventFormState extends State<AddOrEditEventForm> {
   }
 
 
-  void _displayColorPicker() {
-    var color = _color;
-    showDialog(
-      context: context,
-      useSafeArea: true,
-      barrierColor: Colors.black26,
-      builder: (_) => SimpleDialog(
-        clipBehavior: Clip.hardEdge,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        contentPadding: EdgeInsets.all(20.0),
-        children: [
-          const Text(
-            "Select event color",
-            style: TextStyle(
-              color: AppColors.black,
-              fontSize: 25.0,
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 20.0),
-            height: 1.0,
-            color: AppColors.bluishGrey,
-          ),
-          ColorPicker(
-            displayThumbColor: true,
-            enableAlpha: false,
-            pickerColor: _color,
-            onColorChanged: (c) {
-              color = c;
-            },
-          ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.only(top: 50.0, bottom: 30.0),
-              child: CustomButton(
-                title: "Select",
-                onTap: () {
-                  if (mounted) {
-                    setState(() {
-                      _color = color;
-                    });
-                  }
-                  context.pop();
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // void _displayColorPicker() {
+  //   var color = _color;
+  //   showDialog(
+  //     context: context,
+  //     useSafeArea: true,
+  //     barrierColor: Colors.black26,
+  //     builder: (_) => SimpleDialog(
+  //       clipBehavior: Clip.hardEdge,
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(20.0),
+  //       ),
+  //       contentPadding: EdgeInsets.all(20.0),
+  //       children: [
+  //         const Text(
+  //           "Select event color",
+  //           style: TextStyle(
+  //             color: AppColors.black,
+  //             fontSize: 25.0,
+  //           ),
+  //         ),
+  //         Container(
+  //           margin: const EdgeInsets.symmetric(vertical: 20.0),
+  //           height: 1.0,
+  //           color: AppColors.bluishGrey,
+  //         ),
+  //         ColorPicker(
+  //           displayThumbColor: true,
+  //           enableAlpha: false,
+  //           pickerColor: _color,
+  //           onColorChanged: (c) {
+  //             color = c;
+  //           },
+  //         ),
+  //         Center(
+  //           child: Padding(
+  //             padding: EdgeInsets.only(top: 50.0, bottom: 30.0),
+  //             child: CustomButton(
+  //               title: "Select",
+  //               onTap: () {
+  //                 if (mounted) {
+  //                   setState(() {
+  //                     _color = color;
+  //                   });
+  //                 }
+  //                 context.pop();
+  //               },
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

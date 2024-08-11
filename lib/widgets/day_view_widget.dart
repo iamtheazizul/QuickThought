@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
-import 'package:quickthought/widgets/genericDrawer.dart';
 
 import '../pages/event_details_page.dart';
 
@@ -20,7 +19,7 @@ class DayViewWidget extends StatelessWidget {
       key: state,
       width: width,
       startDuration: const Duration(hours: 8),
-      showHalfHours: false,
+      showHalfHours: true,
       heightPerMinute: 1,
       timeLineBuilder: _timeLineBuilder,
       hourIndicatorSettings: HourIndicatorSettings(
@@ -44,6 +43,7 @@ class DayViewWidget extends StatelessWidget {
         lineStyle: LineStyle.dashed,
       ),
       verticalLineOffset: 0,
+      showVerticalLine: false,
       timeLineWidth: 65,
       showLiveTimeLineInAllDays: true,
       liveTimeIndicatorSettings: LiveTimeIndicatorSettings(
@@ -85,8 +85,14 @@ class DayViewWidget extends StatelessWidget {
           top: -8,
           right: 8,
           child: Text(
-            "$hour ${date.hour ~/ 12 == 0 ? "am" : "pm"}",
+            "$hour ${date.hour ~/ 12 == 0 ? "AM" : "PM"}",
             textAlign: TextAlign.right,
+            style: const TextStyle(
+                      fontFamily: 'SFProText',
+                      fontWeight: FontWeight.w300,
+                      fontSize: 14,
+                      
+                    ),
           ),
         ),
       ],

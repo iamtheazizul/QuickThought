@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quickthought/app_color.dart';
-import 'package:quickthought/widgets/fab_button.dart';
-import 'package:quickthought/widgets/genericDrawer.dart';
 
-import '../../extension.dart';
 import '../../widgets/day_view_widget.dart';
-import '../create_event_page.dart';
 
 class DayViewPageDemo extends StatefulWidget {
   const DayViewPageDemo({super.key});

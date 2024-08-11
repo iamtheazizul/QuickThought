@@ -18,7 +18,7 @@ class DetailsPage extends StatelessWidget {
         title: Text(
           event.title,
           style: TextStyle(
-            color: event.color.accentColor,
+            color: event.eventTitleColor,
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
@@ -27,7 +27,7 @@ class DetailsPage extends StatelessWidget {
           onPressed: context.pop,
           icon: Icon(
             Icons.arrow_back,
-            color: event.color.accentColor,
+            color: event.eventTitleColor,
           ),
         ),
       ),

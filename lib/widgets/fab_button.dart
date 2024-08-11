@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/app_color.dart';
-import 'package:quickthought/extension.dart';
 import 'package:quickthought/pages/create_event_page.dart';
+import 'package:quickthought/widgets/bulb_sign.dart';
+import 'package:quickthought/widgets/contact_sign.dart';
+import 'package:quickthought/widgets/plus_sign.dart';
 
 class CustomActionButton extends StatefulWidget {
   @override
@@ -30,14 +32,17 @@ class _CustomActionButtonState extends State<CustomActionButton> {
     switch (_iconIndex) {
       case 0:
         // Action for add events icon
-        context.pushRoute(CreateEventPage());
+        showModalBottomSheet(context: context, builder: (ctx) => CreateEventPage());
+        // context.pushRoute(CreateEventPage());
         break;
       case 1:
         // Action for 'being social'
+        showModalBottomSheet(context: context, builder: (ctx) => ContactSignWidget());
         print('Check action');
         break;
       case 2:
         // Action for Quick ideas
+        showModalBottomSheet(context: context, builder: (ctx) => BulbSignWidget());
         break;
     }
   }

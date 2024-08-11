@@ -3,14 +3,18 @@ import 'package:quickthought/app_color.dart';
 import 'package:quickthought/widgets/color_properties.dart';
 
 class ColorPicker extends StatelessWidget {
+  final Color? tappedColor;
   final Function(ColorProperties) onColorSelected;
 
-  ColorPicker({required this.onColorSelected});
+  ColorPicker({this.tappedColor, required this.onColorSelected});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       // mainAxisAlignment: MainAxisAlignment.center,
+
+      // need to fix the color gradients
+      // change from backgroundcolor to bordercolor
       children: [
         _colorButton(AppColors.primaryEventBackgroundColor, 'Peach'),
         _colorButton(AppColors.secondaryEventBackgroundColor, 'Blueberry'),
@@ -22,6 +26,8 @@ class ColorPicker extends StatelessWidget {
   }
 
   Widget _colorButton(Color color, String colorName) {
+    bool isSelected = color == tappedColor;
+
     return GestureDetector(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -34,13 +40,13 @@ class ColorPicker extends StatelessWidget {
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
+              border: isSelected ? Border.all(color: Colors.black, width: 1) : null,
             ),
           ),
           Text(colorName),
           ],
         ),
       ),
-
 
       onTap: () {
         ColorProperties colorProperties = assignVariables(color);
