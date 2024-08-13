@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/app_color.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
-import 'package:quickthought/home.dart';
+import 'package:quickthought/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());

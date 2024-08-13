@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/app_color.dart';
 import 'package:quickthought/pages/create_event_page.dart';
-import 'package:quickthought/widgets/bulb_sign.dart';
-import 'package:quickthought/widgets/contact_sign.dart';
-import 'package:quickthought/widgets/plus_sign.dart';
+import 'package:quickthought/widgets/floating_action_button/bulb_sign.dart';
+import 'package:quickthought/widgets/floating_action_button/contact_sign.dart';
 
 class CustomActionButton extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quickthought/widgets/fab_button.dart';
+import 'package:quickthought/widgets/floating_action_button/fab_button.dart';
 
-import '../../widgets/week_view_widget.dart';
+import '../../widgets/view_widgets/week_view_widget.dart';
 
 class WeekViewDemo extends StatefulWidget {
   const WeekViewDemo({super.key});

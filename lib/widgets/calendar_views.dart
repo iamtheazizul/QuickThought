@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../app_color.dart';
 import '../enumerations.dart';
-import 'day_view_widget.dart';
-import 'month_view_widget.dart';
-import 'week_view_widget.dart';
+import 'view_widgets/day_view_widget.dart';
+import 'view_widgets/month_view_widget.dart';
+import 'view_widgets/week_view_widget.dart';
 
 class CalendarViews extends StatelessWidget {
   final CalendarView view;

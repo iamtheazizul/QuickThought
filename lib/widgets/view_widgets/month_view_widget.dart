@@ -1,35 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
 
-import '../pages/event_details_page.dart';
+import '../../pages/event_details_page.dart';
 
-class WeekViewWidget extends StatelessWidget {
-  final GlobalKey<WeekViewState>? state;
+class MonthViewWidget extends StatelessWidget {
+  final GlobalKey<MonthViewState>? state;
   final double? width;
 
-  const WeekViewWidget({super.key, this.state, this.width});
+  const MonthViewWidget({
+    super.key,
+    this.state,
+    this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return WeekView(
+    return MonthView(
       key: state,
       width: width,
-      showLiveTimeLineInAllDays: true,
-      timeLineWidth: 65,
-      liveTimeIndicatorSettings: LiveTimeIndicatorSettings(
-        color: Colors.redAccent,
-        showTime: true,
-      ),
-      onEventTap: (events, date) {
+      hideDaysNotInMonth: false,
+      onEventTap: (event, date) {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => DetailsPage(
-              event: events.first,
+              event: event,
             ),
           ),
         );
       },
-      onEventLongTap: (events, date) {
+      onEventLongTap: (event, date) {
         SnackBar snackBar = SnackBar(content: Text("on LongTap"));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },

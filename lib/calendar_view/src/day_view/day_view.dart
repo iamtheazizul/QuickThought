@@ -5,7 +5,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:quickthought/widgets/bottom_app_bar.dart';
-import 'package:quickthought/widgets/fab_button.dart';
+import 'package:quickthought/widgets/floating_action_button/fab_button.dart';
 import 'package:quickthought/widgets/genericDrawer.dart';
 
 import '../../calendar_view.dart';
@@ -265,7 +265,7 @@ class DayView<T extends Object?> extends StatefulWidget {
     this.pageViewPhysics,
     this.dayDetectorBuilder,
     this.showHalfHours = false,
-    this.showQuarterHours = true,
+    this.showQuarterHours = false,
     this.halfHourIndicatorSettings,
     this.startHour = 0,
     this.quarterHourIndicatorSettings,

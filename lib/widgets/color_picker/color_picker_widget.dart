@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/app_color.dart';
-import 'package:quickthought/widgets/color_picker.dart';
-import 'package:quickthought/widgets/color_properties.dart';
+import 'package:quickthought/widgets/color_picker/color_picker.dart';
+import 'package:quickthought/widgets/color_picker/color_properties.dart';
 
 typedef ColorPropertiesCallback = void Function(ColorProperties colorProperties);
 

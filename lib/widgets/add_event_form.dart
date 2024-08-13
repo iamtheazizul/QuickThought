@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
-import 'package:quickthought/widgets/color_picker_widget.dart';
-import 'package:quickthought/widgets/color_properties.dart';
+import 'package:quickthought/widgets/color_picker/color_picker_widget.dart';
+import 'package:quickthought/widgets/color_picker/color_properties.dart';
 
 import '../app_color.dart';
 import '../constants.dart';
-import '../extension.dart';
 import 'custom_button.dart';
 import 'date_time_selector.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/calendar_view/calendar_view.dart';
 
-import '../pages/event_details_page.dart';
+import '../../pages/event_details_page.dart';
 
 class DayViewWidget extends StatelessWidget {
   final GlobalKey<DayViewState>? state;
@@ -19,7 +19,7 @@ class DayViewWidget extends StatelessWidget {
       key: state,
       width: width,
       startDuration: const Duration(hours: 8),
-      showHalfHours: true,
+      showHalfHours: false,
       heightPerMinute: 1,
       timeLineBuilder: _timeLineBuilder,
       hourIndicatorSettings: HourIndicatorSettings(

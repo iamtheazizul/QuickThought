@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/day_view_widget.dart';
+import '../../widgets/view_widgets/day_view_widget.dart';
 
 class DayViewPageDemo extends StatefulWidget {
   const DayViewPageDemo({super.key});

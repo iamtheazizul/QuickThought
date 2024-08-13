@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quickthought/app_color.dart';
-import 'package:quickthought/extension.dart';
-import 'package:quickthought/pages/create_event_page.dart';
-import 'package:quickthought/widgets/add_event_form.dart';
 
 class ContactSignWidget extends StatelessWidget {
   const ContactSignWidget({super.key});
